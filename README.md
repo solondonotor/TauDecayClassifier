@@ -81,7 +81,11 @@ Code	Meaning
 ## 4. Inspecting the output
 
 After running the analysis:
-python show_table.py
+
+python show_table.py result_RTDM/SAMPLE_NAME.root
+
+For example, for the default sample:
+python show_table.py result_RTDM/p8_ee_Ztautau_ecm91.root
 
 The script displays:
 - decay-mode code
@@ -91,9 +95,6 @@ The script displays:
 Since the codes are stored as integers, leading zeros are lost in the ROOT file. For example:
 00110 -> 110
 
-show_table.py restores the five-digit representation when displaying the table.
-
-If using a different output file, update the ROOT file path at the beginning of show_table.py.
 ## 5. Typical workflow
 FCC-ee MC sample
        |
