@@ -1,7 +1,14 @@
 import ROOT
+import sys
 from collections import Counter
 
-f    = ROOT.TFile("/eos/home-i02/s/slondono/TauAnalysis/result_RTDM/p8_ee_Ztautau_ecm91.root")
+if len(sys.argv) < 2:
+    print("Usage: python show_table.py <input.root>")
+    sys.exit(1)
+
+input_file = sys.argv[1]
+
+f = ROOT.TFile(input_file)
 tree = f.Get("events")
 
 pionic_counts = Counter()
